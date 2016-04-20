@@ -1,0 +1,39 @@
+---
+title: 'Installing from GitHub!'
+author: "E. F. Haghish"
+date: "20 Apr 2016"
+output: html_document
+---
+
+In the previous lecture, I was asked to "reinstall" the packages required for 
+a particular computation, within **rmarkdown**. I was using the 
+`, eval = FALSE` argument which tells R only to print the code-chunk in the 
+document without executing it. When we tried to execute the code, we got 
+an error from RStudio. I looked in the error today and it seems we have to 
+specify the repository of the package. For **CRAN** packages, it would be 
+as follows. 
+
+To test this, I install my own `DOT` package from CRAN
+```{r}
+install.packages("DOT", repos = 'http://cran.us.r-project.org')
+```
+
+##### But what if your package is not on CRAN, and it's hosten on GitHub instead?
+
+I looked into that as well. To test this, I'm going to install my `graphConver` 
+package from GitHub. 
+
+```{r}
+library(devtools)
+install_github("haghish/convertGraph")
+```
+
+I can't wait to see you all on GitHub. 
+[Here is my GitHub account](https://github.com/haghish/). I have created a 
+repository for the course where I **SHARE** some codes with the class through 
+GitHub. **You Should Fork This Repository!** Forking is a term for connecting 
+to an existing project created by someone else. 
+
+
+
+
