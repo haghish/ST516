@@ -9,6 +9,7 @@ Once you have solved the exercises, push your codes and files. It'd be so nice i
 [rmarkdown](http://rmarkdown.rstudio.com/). But simple R script files would be as good.
 
 
-
+> Note that this repository is not meant to replace **Blackboard Platform**. This is just a repository for the whole class to 
+practice GitHub, Cooperate on group assignments, and share the exercises with the rest of the class ;) 
 
 
