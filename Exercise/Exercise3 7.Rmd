@@ -2,7 +2,7 @@
 title: "Exercise 3.7 Ross"
 author: "Emil H. Andersen"
 date: "April 21, 2016"
-output: html_document
+output: pdf_document
 ---
 
 Exercise 3.7 in Ross book: Use simulation to approximate the following integral:
