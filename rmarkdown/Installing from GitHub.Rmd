@@ -21,9 +21,10 @@ install.packages("DOT", repos = 'http://cran.us.r-project.org')
 ##### But what if your package is not on CRAN, and it's hosten on GitHub instead?
 
 I looked into that as well. To test this, I'm going to install my `graphConver` 
-package from GitHub. 
+package from GitHub. To do this we need to make sure we have the 'devtools' library intalled.
 
 ```{r}
+install.packages("devtools", repos = 'http://cran.us.r-project.org')
 library(devtools)
 install_github("haghish/convertGraph")
 ```
