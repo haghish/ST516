@@ -1,5 +1,3 @@
-![](https://www.r-project.org/Rlogo.png)
-
 # ST516
 #### A Repository for ST516 Course - Computational Statistics
 
