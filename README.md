@@ -1,3 +1,5 @@
+![](https://www.r-project.org/Rlogo.png)
+
 # ST516
 #### A Repository for ST516 Course - Computational Statistics
 
@@ -12,4 +14,4 @@ Once you have solved the exercises, push your codes and files. It'd be so nice i
 > Note that this repository is not meant to replace **Blackboard Platform**. This is just a repository for the whole class to 
 practice GitHub, cooperate on group assignments, and share the exercises with the rest of the class ;) 
 
-![](https://www.r-project.org/Rlogo.png)
+
