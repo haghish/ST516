@@ -1,0 +1,143 @@
+---
+title: "Exercises from Chapter 3"
+author: "Nguyen Khanh Le Ho"
+date: "21. apr. 2016"
+output: html_document
+---
+
+
+**Problem 12**
+
+Let $N=\min\{n:\sum\limits_{i=0}^nU_i>1\}$, where $U_i\sim U(0,1)$ for $i\geq 1$. Thus $N$ is a random number and we want to estimate $E(N)$ by generating 100,1000 and 10000 values of $N$. 
+
+
+***To Generate $N$***
+
+The idea is to generate one random uniform number $U_i$ at a time and add them together exactly until the sum exceed 1, then we count how many of those have been added.
+
+*Below is the code to generate the random number $N$. The function **RN12**, takes as input the sample size, and returns the sample mean which is an estimation for $E(N)$.*
+```{r}
+RN12<-function(n){
+  N2<-rep(0,n) #storage for the n random numbers.
+  for(i in 1:n){
+
+    N=0 # There is no sum in the begining, thus no uniform random number.
+    S=0 # The sum is 0 in the begining.
+    
+    while(S<=1){ # Check wether the sum of the uniform random numbers exceed 1.
+      U<-runif(1)
+      S=S+U 
+      N=N+1
+    }
+
+  N2[i]=N # Once the sum exceed 1 store the random number N and repeat the experiment.
+  }
+
+return(mean(N2))
+}
+```
+
+(a) Using a sample of size 100 yields
+```{r}
+RN12(100)
+```
+(b) Using a sample of size 1000 yields
+```{r}
+RN12(1000)
+```
+(c) Using a sample of size 10000 yields
+```{r}
+RN12(10000)
+```
+(d) I think that this is a cool way to estimate $e$. :-)
+
+**Problem 13**
+
+Let $N=\max\{n:\prod\limits_{i=0}^nU_i\geq e^{-3}\}$, where $U_i\sim U(0,1)$ for $i\geq 1$. Thus $N$ is a random number and we want to estimate $E(N)$ by simulation. 
+
+***To Generate $N$***
+
+Similar approach as in problem 12.
+
+*Below is the code for generating the desired random numbers. The function **RN12**, takes as input the sample size, and returns the sample mean which is an estimation for $E(N)$.*
+
+```{r}
+RN13<-function(n){
+  N2<-rep(0,n)
+  
+  for(i in 1:n){
+    P=1  # The product is 1, when N is 0.
+    N=0  # N the number of uniform random number is 0 in the begining.
+    
+    while(P>exp(-3)){ #Check whether the product exceed e^-3.
+      U<-runif(1)
+      P=P*U           
+      N=N+1           #the number of uniform random number in the product is increased by 1.
+    }
+    
+    N2[i]=N
+  }
+  
+  return(mean(N2))
+}
+```
+
+(a) Below an estimation for $E(N)$ using a sample of size 10000  
+```{r}
+RN13(10000)
+```
+(b) Estimation for $P(N=i)$ for $i=0,...,6$, with sample of size 10000. The idea is to generate 10000 random numbers $N$, then the probability $P(N=i)\approx \frac{\#\{N=i\}}{10000}$, where $\#\{N=i\}$ is the number of the simulated random numbers $N$ that attained value $i$.
+
+```{r}
+n<- 10000
+N2<-rep(0,n)
+for(i in 1:n){
+    P=1
+    N=0
+    while(P>exp(-3)){
+      U<-runif(1)
+      P=P*U
+      N=N+1
+    }
+    N2[i]=N
+}
+P0= length(N2[N2==0])/10000
+P1= length(N2[N2==1])/10000
+P2= length(N2[N2==2])/10000
+P3= length(N2[N2==3])/10000
+P4= length(N2[N2==4])/10000
+P5= length(N2[N2==5])/10000
+P6= length(N2[N2==6])/10000
+```
+ Estimation for $P(N=0)$
+```{r}
+P0
+```
+ Estimation for $P(N=1)$
+```{r}
+P1
+```
+ Estimation for $P(N=2)$
+```{r}
+P2
+``` 
+
+Estimation for $P(N=3)$
+
+```{r}
+P3
+```
+Estimation for $P(N=4)$
+```{r}
+P4
+```
+
+Estimation for $P(N=5)$
+```{r}
+P5
+```
+Estimation for $P(N=6)$
+
+```{r}
+P6
+```
