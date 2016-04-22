@@ -20,7 +20,7 @@ We now proceed to write a simple function in R, to compute the above-mentioned d
 ```{r}
 #-----------------------------------------------------------
 # Function: estInt1(n) 
-#           - (Function to estimate gievn definite integral)
+#           - (Function to estimate given definite integral)
 # Input   : n
 #           - (The nr. of paris of (U_1, U_2) to generate)
 # Output  : est
@@ -33,7 +33,7 @@ estInt1 <- function(n) {
     U2 <- runif(1)
     evalFun <- exp((U1 + U2)^2)        #Evaluate given function.
     storeVal1 <- c(evalFun, storeVal1) #Store function evaluation. 
-    est <- sum(storeVal1)/n            #Calculate estimate
+    est <- sum(storeVal1)/n            #Calculate estimate.
   }
   return(est)
 }
@@ -45,11 +45,11 @@ estInt1(100000)
 Plot of the estimates (law of large numbers)
 ---
 
-Additonally, it is also possible to plot the generated data, if we slightly change the above function. By plottig the generated data we can get a good idea of how the law of large numbers works and that it actually applies. As we can see in the plot blow and by the estimate above, the estimates converges to some value around $5$. 
+Additonally, it is also possible to plot the generated data, if we slightly change the above function. By plotting the generated data we can get a good idea of how the law of large numbers works and that it actually applies. As we can see in the plot below and by the estimate above, the estimates converge to some value around $5$. 
 ```{r}
 #-----------------------------------------------------------
 # Function: estInt2(n) 
-#           - (Function to estimate gievn definite integral)
+#           - (Function to estimate given definite integral)
 # Input   : n
 #           - (The nr. of paris of (U_1, U_2) to generate)
 # Output  : mat
