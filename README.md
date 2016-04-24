@@ -13,6 +13,6 @@ Once you have solved the exercises, push your codes and files. It'd be so nice i
 practice GitHub, cooperate on group assignments, and share the exercises with the rest of the class ;) 
 
 #### Exercises
-When you send a `pull request` for the exercises, only submit the **rmarkdown** file with a **PDF** (optional). PDF files can be viewed easier on GitHub. 
+When you send a `pull request` for the exercises, only submit the **rmarkdown** file with a **PDF** (optional). PDF files can be viewed easier than HTML on GitHub. 
 
 
