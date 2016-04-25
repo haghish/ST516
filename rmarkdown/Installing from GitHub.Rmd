@@ -32,8 +32,11 @@ install_github("haghish/convertGraph")
 I can't wait to see you all on GitHub. 
 [Here is my GitHub account](https://github.com/haghish/). I have created a 
 repository for the course where I **SHARE** some codes with the class through 
-GitHub. **You Should Fork This Repository!** Forking is a term for connecting 
+GitHub. Forking is a term for connecting 
 to an existing project created by someone else. 
+
+[**You Should Fork This Repository!** ](https://github.com/haghish/ST516)
+ 
 
 
 
