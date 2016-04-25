@@ -1,0 +1,47 @@
+---
+title: "Exercise 9, Chapter 3"
+author: "Thomas B. Jørgensen"
+date: "25 april 2016"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Consider the following double integral
+\begin{align}
+\int_0^\infty\int_0^x e^{-(x+y)}dy\;dx
+\end{align}
+with the following analytic solution
+\begin{align}
+\int_0^\infty\int_0^x e^{-(x+y)}dy\;dx&=\int_0^\infty    e^{-x}-e^{-2x}   dx\\
+&=\left[  -e^{-x}+\frac{e^{-2x}}{2}  \right]_0^\infty\\
+&=\frac{1}{2}
+\end{align}
+For $y$ observe that its upper limit $f(x)=x$ exactly divides in two the domain $\Omega=[0,\infty]\times [0,\infty]$, thus we can rewrite $(1)$ so as to obtain the following integral
+\begin{align}
+\int_0^\infty\int_0^x e^{-(x+y)}dy\;dx=\frac{1}{2}\cdot\int_0^\infty\int_0^\infty e^{-(x+y)}dy\;dx
+\end{align}
+Now, the rhs of $(5)$ is separable i.e. split the integral into two components
+\begin{align}
+\int_0^\infty e^{-x}dx\cdot\int_0^\infty e^{-y}dy
+\end{align}
+Define the function $f(z)=e^{-z}$ with $z\in [0,\infty]$ then it's straightforward to generate values of $f(z)$ using random uniform numbers $U=[0,1]$ be means of the following composite function
+\begin{align}
+g(U)=\frac{f(\frac{1}{U}-1)}{U^2}=\frac{e^{1-\frac{1}{U}}}{U^2}
+\end{align}
+where we used the substitution $U=\frac{1}{z+1}$.
+Obviously we must generate two random uniform numbers $U1,U2$ and then taking the product of applying $(7)$ for $U1$ and $U2$.
+The following program implements the idea
+```{r cars}
+n <- 500000
+total <- 0
+for (i in 1:n) {
+    U1 <- runif(1)
+    U2 <- runif(2)
+    total <- total+exp(1-1/U1)/((U1)^2)*exp(1-1/U2)/((U2)^2)
+}
+(1/2)*total/n
+```
+with values very close to $(4)$.
