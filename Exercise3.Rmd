@@ -1,0 +1,22 @@
+---
+title: "Exercise 3, chapter 3"
+author: "Katrine Bach"
+date: "25 april 2016"
+output: html_document
+---
+In this exercise I have to use simulation to approximate $\int_0^1 e^{e^{x}}dx$.
+```{r}
+simba <- function(n){
+  gem <- c()
+  for (i in 1:n) {
+    x <- runif(1)
+    evalsimba <- exp(exp(x)) #evaluate the function. 
+    gem <- c(evalsimba,gem) #Stores my function 
+  }
+  estimat <- sum(gem)/n #calculate the esimtator. 
+  return(estimat)
+}
+n=100000
+simba(n)
+```
+
