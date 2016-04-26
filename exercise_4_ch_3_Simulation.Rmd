@@ -1,0 +1,29 @@
+---
+title: "Exercise_4_chapter_3_Simulation"
+author: "Birka Jensen"
+date: "21. apr. 2016"
+output: html_document
+---
+Use simulation to approximate $$\int_0^1(1-x^2)^{\frac{3}{2}}dx$$ and compare with the exact answer, providing there is one.  
+
+#### Exact solution  
+$$\int_0^1(1-x^2)^{\frac{3}{2}}dx=\frac{3\pi}{16}\approx 0.5890486$$
+[Go to this link to find full calculation](https://www.symbolab.com/solver/step-by-step/%5Cint_%7B0%7D%5E%7B1%7D%5Cleft%28%5Cleft%281-x%5E%7B2%7D%5Cright%29%20%5E%7B%5Cfrac%7B3%7D%7B2%7D%7D%5Cright%29dx/?origin=enterkey)  
+
+#### Simulation  
+1. generate $U_i\sim U(0,1)$
+2. Calculate $\sum_{i=1}^n \frac{(1-U_i^2)^{\frac{3}{2}}}{n}$
+
+```{r}
+n = 10^4
+U = runif(n,0,1)
+V = sapply(U, function(u) ((1-u^2)^(3/2)))/n
+Integral = sum(V)
+Integral
+```
+
+
+```{r, echo=FALSE}
+
+```
+

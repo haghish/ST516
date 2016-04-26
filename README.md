@@ -12,4 +12,7 @@ Once you have solved the exercises, push your codes and files. It'd be so nice i
 > Note that this repository is not meant to replace **Blackboard Platform**. This is just a repository for the whole class to 
 practice GitHub, cooperate on group assignments, and share the exercises with the rest of the class ;) 
 
+#### Exercises
+When you send a `pull request` for the exercises, only submit the **rmarkdown** file with a **PDF** (optional). PDF files can be viewed easier than HTML on GitHub. 
+
 
