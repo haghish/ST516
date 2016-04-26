@@ -1,0 +1,31 @@
+---
+title: "Exercise_10_chapter_3_Simulation"
+author: "Birka Jensen"
+date: "26. apr. 2016"
+output: html_document
+---
+Simulate $cov(U,e^U)$ with $U\sim U(0,1) and compare to the exact answer.
+
+### Exact Solution:
+$$cov(U,e^U)=E(Ue^U)-E(U)E(e^U)=\int_0^1xe^xdx-\int_0^1e^xdx\int_0^1xdx=\left[xe^x-e^x\right]_0^1-\left[\frac{1}{2}x^2\right]_0^1\left[e^x\right]_0^1=1-\frac{e-1}{2}\approx 0,14086$$
+
+### Simulation
+1. Draw $U_i\sim U(0,1)$
+2. generate $X_i= e^{U_i}$
+3. Calculate $cov(U,X)$
+
+```{r}
+n=10^6
+U = runif(n)
+X = sapply(U, function(u) exp(u))
+cov(U,X)
+
+```
+
+
+
+```{r, echo=FALSE}
+
+```
+
+
