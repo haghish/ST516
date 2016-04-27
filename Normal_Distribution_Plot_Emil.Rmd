@@ -1,0 +1,34 @@
+---
+title: "Normal Distribution Plot Exercise"
+author: "Emil H. Andersen"
+date: "27 April 2016"
+output: html_document
+---
+
+The point of this exercise is to learn how to simulate distributions and quickly plotting density as well as CDFs.
+
+The following function takes n and m as arguments, where n is the number of random observations and m is the mean for the given normal distributions generated. First it generates X that contains an empty 0 by n matrix to contain 10 normal distributions in. Afterwards, n random observations of the normal distributions with mean m and standard deviation 1 through 10 are generated and put properly into X. Afterwards a 1 by 2 grid is created for the two graphs to be generated. Then, 10 Normal Distribution graphs over density of the observations in X are generated. These graphs flow in color from bright red to bright blue. Afterwards 10 Cumulative Density Function graphs are generated from the observations in X. These also flow in color from bright red to bright blue. Both plots have the same x-axis and y-axis setup to be easily comparable. The y-axis is always from 0 to 1, while the x-axis is an interval that is from m-40 to m+40.
+
+```{r}
+distribution.change <- function(n,m){
+  X <- matrix(rep(0,n*10),nrow=10,ncol=n)
+  for(i in 1:10){
+    X[i,] = rnorm(n,mean=m,sd=i)
+  }
+  par(mfrow=c(1,2))
+  plot(density(X[1,]),type="l", col=rgb(1,0,0), xlim=c(m-40,m+40), ylim=c(0,1), xlab="x", main="Normal Distribution")
+  for(i in 2:10){
+    lines(density(X[i,]),type="l", col=rgb(1-((i-1)/9),0,((i-1)/9)))
+  }
+  plot(ecdf(X[1,]), col=rgb(1,0,0),xlim=c(m-40,m+40), ylim=c(0,1), xlab="x", main="CDF")
+  for(i in 2:10){
+    lines(ecdf(X[i,]), col=rgb(1-((i-1)/9),0,((i-1)/9)))
+  }
+}
+```
+Now, the function is run with n=10000 and m=100, as requested in the exercise description. However, to make sure the result is reliably the same in this document, the seed is set to 1 first.
+```{r}
+set.seed(1)
+distribution.change(10000,100)
+```
+
