@@ -1,7 +1,7 @@
 # Distributions
 
 - Write a R function that:
-    - simulates n random observations from normal distribution with mean of m and SD of sd
+    - simulates n random observations from **normal distribution** with mean of m and SD of sd
 
     - name the function distribution.change()
 
@@ -14,8 +14,6 @@
 
 Plot the following separately: 
 
-- **distribution**
+- **normal distribution**
 
 - **cdf**
-
-- **pdf**

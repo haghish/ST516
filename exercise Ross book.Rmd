@@ -1,0 +1,47 @@
+---
+author: Afsaneh Mohammadnejad
+date: April 26, 2016
+title: EXERCISE 11
+output: html_document
+---
+
+
+
+USe simulation to approximate $cor(u,\sqrt{(1-u^2)})$ and $cor(u^2,\sqrt{(1-u^2)})$
+
+In order to simulate $cor(u,\sqrt{(1-u^2)})$  we can use:
+
+$cor(u,\sqrt{(1-u^2)})=\frac{1/n \sum_{i=1}^n (U_i-E(U))(\sqrt{(1-u-i^2)})-E((\sqrt{(1-u^2)})}{\sqrt{ var(u)var\bigg(\sqrt{(1-U^2)}\bigg)}}$
+
+
+and I calculated the $var(u)=\frac{1}{12}$ ,$var(\sqrt{(1-u^2)})= \frac{2}{3}-(\frac{\pi}{4})^2$ and $E(u)=\frac{1}{2}$,$E(\sqrt{(1-u^2)})=\frac{\pi}{4}$
+
+ By using the same formula we can simulate $cor(u^2,\sqrt{(1-u^2)})$ as follow:
+ 
+$cor(u^2,\sqrt{(1-u^2)})=\frac{1/n \sum_{i=1}^n (U_i^2-E(U^2))(\sqrt{(1-u^2)})-E((\sqrt{(1-(u-i)^2)})}{\sqrt{ var(u^2)var\bigg(\sqrt{(1-U^2)}\bigg)}}$
+
+$var(u^2)=\frac{4}{45}$ ,$var(\sqrt{(1-u^2)})= \frac{2}{3}-(\frac{\pi}{4})^2$ and $E(u^2)=\frac{1}{3}$,$E(\sqrt{(1-u^2)})=\frac{\pi}{4}$
+```{r}
+n<-100
+u<-runif(n)
+w<-sqrt(1-u^2)
+#correlation of the (u,w)
+cor(u,w)
+#comoute the variance and expected value of u,u^2
+ var(u)
+mean(u)
+var(u^2)
+mean(u^2)
+#compute the variance and the expected value of (1-U^2)
+var(w)
+mean(w)
+#correlation of (u^2,w)
+cor(u^2,w)
+
+
+
+```
+
+
+
+
