@@ -1,0 +1,44 @@
+---
+title: "Distribution"
+author: "Nguyen"
+date: "28. apr. 2016"
+output: html_document
+---
+This function simply generates 10000 normally distributed random variables, with inputs, the mean and standard deviation.
+```{r}
+distribution.change<-function(m,sd){
+n<- 10000
+return(rnorm(n,m,sd))
+}
+```
+
+Below is the code to plot the density of the generated random variables with fixed mean and standard deviation varies from 1 to 10.
+```{r}
+for(i in 1:10){
+  X<-distribution.change(10,i)
+  if(i>1){
+    lines(density(X),col=rgb(i/10,0,0))     #rbg() can be replace by col=i for colorfulness
+    
+  }else{
+    plot(density(X), col=i, ylab = "Density", xlab = "X",main="Density of the generated normal RV's with SD varies from 1-10")
+  }
+}
+
+```
+
+ *As observed the higher the deviation the flatter the graph.*
+ 
+Below is the code to plot the CDF of the generated random variables with fixed mean and standard deviation varies from 1 to 10.
+
+```{r}
+for(i in 1:10){
+  X<-distribution.change(10,i)
+  if(i>1){
+    lines(ecdf(X),col=rgb(i/10,0,0)) #rbg() can be replace by col=i for colorfulness
+  }else{
+    plot(ecdf(X), col=rgb(i/10,0,0), ylab = "CDF", xlab = "X",main="CDF of the generated normal RV's with SD varies from 1-10")
+  }
+}
+
+```
+ 
