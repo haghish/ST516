@@ -1,0 +1,43 @@
+---
+title: "Normal distribution"
+author: "Tobias Mortensen"
+output: pdf_document
+---
+
+Function to generate n random observations from a normal distribution with mean = m and standard deviation = sd:
+```{r}
+distribution.change <- function(n, m, sd){
+  set.seed(1)
+  X <- rnorm(n, m, sd) 
+  return (X)
+}
+```
+
+The code to plot the pdf and the cdf for the normal distribution with 
+sd = 1,2,...,10:
+```{r}
+# plot the pdf
+for(i in 1:10){
+  set.seed(1)
+  f <- distribution.change(10000, 100, i)
+  if(i == 1){
+    plot(density(f, 1), col=rgb(0, 0, 0), xlab = "x", ylab = "pdf")
+  }
+  else{
+    lines(density(f, 1), col=rgb(i/10,i/20,0))
+  }
+}
+
+# plot the cdf
+for(i in 1:10){
+  set.seed(1) 
+  f <- distribution.change(10000, 100, i)
+  if(i == 1){
+    plot(ecdf(f), col=rgb(0, 0, 0), xlim = c(70,130), ylim = c(0,1), ylab = "cdf")
+  }
+  else{
+    lines(ecdf(f), col=rgb(i/10,i/20,0)) 
+  }
+}
+```
+
