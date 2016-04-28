@@ -1,0 +1,38 @@
+---
+title: "Exercise - Distribution"
+author: "Steffan Leth"
+date: "28. apr. 2016"
+output: pdf_document
+---
+
+#The Exercise
+
+Simulate 10 data sets with n random observations from normal distribution with mean, m and SD, sd. 
+
+Let sd vary for each data set start from 1 and end at 10. 
+
+Make a function which draw both pdf and cdf, with the different sd. 
+```{r}
+distribution.change <- function(n,m){
+  # pdf
+for (sd in 1:10){
+  if (sd==1){
+    plot(density(sort(rnorm(n,m,sd))),"Distribution", xlab = "x", ylab = 'y',col= rgb(sd/10,abs((5-sd)/10),1-(sd/10)), ylim=c(0,0.5),xlim=c(m-40,m+40))
+  } else{
+    lines(density(sort(rnorm(n,m,sd))),col=rgb(sd/10,abs((5-sd)/10),1-(sd/10)))
+  }
+}
+  
+  #cdf
+for (sd in 1:10){
+    if (sd==1){
+    plot(ecdf(rnorm(n,m,sd)),main='cdf', xlab = "x", ylab = 'y',col= rgb(sd/10,abs((5-sd)/10),1-(sd/10)), ylim=c(0,1),xlim=c(m-40,m+40))
+  } else{
+    lines(ecdf(rnorm(n,m,sd)),col=rgb(sd/10,abs((5-sd)/10),1-(sd/10)))
+  }
+}
+}
+distribution.change(10000,100)
+```
+
+
