@@ -12,11 +12,10 @@ Suggested answer to exercise 8, chapter 3
 ------
 
 No analytical solution is readily available for the following definite integral:
-$$\int_{0}^{1}\int_{0}^{1} \exp\left[(x+y)^2\right]\,dydx$$
-In this case we can estimate it by applying Monte Carlo integration. This is easily done, since our target region in $\mathbb{R}^2$ is a square $0 \leq x \leq 1$, $0 \leq y \leq 1$. It is thus sufficent (without any manipolation of the integrand and the integral, to fit the Monte Carlo integration scheme), to generate $(U_{1(1)}, U_{2(1)}), (U_{1(2)},U_{2(2)}),. . .,(U_{1(n)},U_{2(n)})$ pairs of uniform random numbers $U_1,U_2\sim U(0, 1)$, to estimate the volume of the integral.
+$$\int_{0}^{1}\int_{0}^{1} e^{(x+y)^2}\,dydx$$
+In this case we can estimate it by applying Monte Carlo integration. This is easily done, since our target region in $\mathbb{R}^2$ is a square $0 \leq x \leq 1$, $0 \leq y \leq 1$. It is thus sufficent (without any manipulation of the integrand and the integral, to fit the Monte Carlo integration scheme), to generate $(U_{1(1)}, U_{2(1)}), (U_{1(2)},U_{2(2)}),. . .,(U_{1(n)},U_{2(n)})$ iid pairs of uniform random variables on $\left[0, 1\right]$, to estimate the volume of the integral.
 
 We now proceed to write a simple function in R, to compute the above-mentioned definite integral:
-
 ```{r}
 #-----------------------------------------------------------
 # Function: estInt1(n) 
@@ -33,8 +32,8 @@ estInt1 <- function(n) {
     U2 <- runif(1)
     evalFun <- exp((U1 + U2)^2)        #Evaluate given function.
     storeVal1 <- c(evalFun, storeVal1) #Store function evaluation. 
-    est <- sum(storeVal1)/n            #Calculate estimate.
   }
+  est <- sum(storeVal1)/n              #Calculate estimate.
   return(est)
 }
 estInt1(100000)
