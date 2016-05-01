@@ -1,0 +1,41 @@
+---
+title: "Task 8.12 in book Ross"
+author: "Emil H. Andersen"
+date: "April 29, 2016"
+output: html_document
+---
+
+Task description: To estimate $\theta$, we generated 20 independent values having mean $\theta$. If the successive values obtained were:
+
+102, 112, 131, 107, 114, 95, 133, 145, 139, 117, 93, 111, 124, 122, 136, 141, 119, 122, 151, 143
+
+How many additional random variables do you think we will have to generate if we want to be 99% certain that our final estimate of $\theta$ is correct to within $\pm 0.5$?
+
+Using the information given by definition in book Ross, on page 142 and considering the remarks page 143, choose $\alpha = 0.01$ which follows that $z_{\alpha / 2} = 2.58$. Now we calcalate the sample mean and sample standard deviation from the data given, using formulas given on page 140, equation (8.6) and (8.7).
+```{r}
+x <- c(102, 112, 131, 107, 114, 95, 133, 145, 139, 117, 93, 111, 124, 122, 136, 141, 119, 122, 151, 143)
+X <- 0
+S2 <- 0
+X[1] <- x[1]
+for(i in 2:20){
+  X[i] <- X[i-1] + (x[i]-X[i-1])/(i)
+  S2[i] <- (1 - 1/(i-1))*S2[i-1] + i*(X[i]-X[i-1])^2
+}
+S = sqrt(S2)
+```
+Now note, that we want $2.58 \cdot S/\sqrt(k) < 1$, where k is number of observations, and S is the sample standard deviation. Now observe that for the sample we have, the inequality does not hold. in fact
+```{r}
+2.58*S[20]/sqrt(20)
+```
+Which is not less than 1. However, lets assume hypothetically, that the sample standard deviation is not going to change with additional data, then it would mean that $S_{20} = S_{21} = ... = S_n$. With that in mind, we would also have that $2.58 \cdot S_k / sqrt(k) > 2.58 S_{k+1} / sqrt(k+1) > ...$ and so we choose some number n such that $2.58 \cdot S_{20} / sqrt(n) < 1$.
+```{r}
+A <- 2.58*S[20]/sqrt(20)
+i <- 20
+while(A >= 1){
+  i <- i + 1
+  A <- 2.58*S[20]/sqrt(i)
+}
+print(i)
+print(A)
+```
+So from that observation, I think we would need max 1879 random variables, i.e. 1859 additional observations, to be absolutely certain that the mean holds with the given significance and variance.
