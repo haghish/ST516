@@ -1,0 +1,80 @@
+---
+title: "Exercise2.11 montecarlo in r"
+author: "Maria"
+date: "30-04-2016"
+output: pdf_document
+---
+### Exercise 2.11 a
+I should generate a binomial $Bin(n, p)$ random variable with $n = 25$ and $p = .2$.
+After that I should plot a histogram for a simulated sample and compare it with the binomial mass function.
+This is done in the following R-code: 
+
+```{r}
+#Exercise 2.11 a
+
+nsim<-5000 #number of random numbers
+n=25;p=.2; #parametre to binomial
+y=seq(0,n,by=1) #sequence used to generate the binomial
+cp=pbinom(y,n,p) #make cdf of binomial
+X=rep(0,nsim) # A vector to store in 
+for(i in 1:nsim){
+  u=runif(1)
+  X[i]=sum(cp<u) #checks to see what interval the uniform random variable fell in and
+  #assigns the correct Poisson value to X
+}
+hist(X,freq=F) #histogram
+lines(1:n,dbinom(1:n,n,p),lwd=2) #Density function
+system.time(rbinom(5000,25,.2))  #Calculate time
+
+# Generate binomial from a function
+MYbinom<-function(s0,n0,p0){
+  cp=pbinom(seq(0,n0,by=1),n0,p0) #make cdf of binomial
+  X=rep(0,s0) #Vector to store 
+  for (i in 1:s0){
+    u=runif(1)
+    X[i]=sum(cp<u) #checks to see what interval the uniform random variable fell in and 
+    #assigns the correct Poisson value to X
+  }
+  return(X)
+}
+system.time(MYbinom(5000,25,.2)) #calculate time 
+
+```
+
+It is seen that the histogram and line looks ok but not perfect. 
+When the time is calculated it can be seen that the first method is better than the other method 
+
+### Exercise 2.11 b
+In this exricse there shall be shown that the code below (the function original) produces a random variable U from $U([0,a])$.  
+This shall be compared  with the transform $\alpha U$ ,$U \sim U (0, 1)$ for values of $\alpha$ close to 0 and close to 1, and with runif(1,max=alpha).
+There is used the following R-code:
+```{r}
+original<-function(s0,alpha){  #Make function
+  U=rep(0,s0) #Vector to store in 
+  for (i in 1:s0){
+    u=runif(1)
+    while (u > alpha) u=runif(1)
+    U[i]=u #Takes the u in a vector
+  }
+    return(U) #Return u
+  
+
+
+}
+par(mfrow=c(1,2))
+hist(original(1000,.1)) #Make histogram
+
+system.time(original(1000,.1)) #calculate time 
+
+Trans<-function(s0,alpha){ #Funcrtion there made the transoform alpha*u
+  U=rep(0,s0) #Vector to store in 
+  for (i in 1:s0) {
+    U[i]=alpha*runif(1) #The transform alpha*u
+}
+return(U)
+}
+hist(Trans(1000,.1)) #Make histogram
+system.time(Trans(1000,.1)) #Calculate the time 
+```
+
+It can be seen that when $\alpha$ is small when the first program is very slow. 
