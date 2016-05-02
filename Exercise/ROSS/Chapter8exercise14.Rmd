@@ -1,0 +1,53 @@
+---
+title: "Chapter_8_Exercise_14"
+author: "Birka Jensen"
+date: "29. apr. 2016"
+output: html_document
+---
+
+Exercise 14 chapter 8:
+======================
+
+If n = 2 and $X_1=1$ and $X_2=3$, what is the bootstrap estimate of Var($S^2$) (where $S^2$ is the sample variance).
+
+First observe that $P(X_1)=\frac{1}{2}=P(X_2)$
+
+To generate $X_e$ (a random Variable that takes on the value 1 with probability 1/2 and 3 with probability 1/2) do as follows:
+```{r}
+n=1000
+M=sapply(1:100,function(i) runif(n,0,1)) #matrix of 100 columns each containing 1000 U(0,1) R.V.'s
+#U=runif(1000,0,1) #generate 1000 U(0,1) R.V.'s
+X=c() #initialize vector
+
+RVChoice = function(u){ #function to easily simulate X_i
+  if(u<.5){X=append(X,1)
+  }
+  else{X=append(X,3)
+    }
+}
+XM=apply(M,c(1,2), RVChoice) #a Matrix with 100 columns each containing 1000 simulated X_e, R.V.'s with F_e
+plot(ecdf(XM[,1])) #plot the cdf of simulated variable X_i in the first sample of the matrix
+```
+
+Now we have a matrix XM that contains 100 samples of size=1000 of the random variable $X_e$ 
+
+
+```{r}
+
+samplemean=apply(XM,2,function(x) mean(x)) #a vector with the samplemean of each of the columns of XM
+
+samplevariance=c() #initialize a vector "samplevariance"
+
+#using definition of the sample variance from page 137 (Ross),this for loop calculates the sample variance of each of the rows in XM
+for(i in 1:100){  
+  samplevariance=append(samplevariance,sum(sapply(XM[,i], function(x) (x-samplemean[i])^2))/(n-1))
+  } 
+```
+
+To obtain an estimate of the variance of the sample variance, I take the variance of the values in the vector containing samplevariances.
+
+```{r}
+#the estimated variance of the sample variance
+var(samplevariance)  
+```
+
