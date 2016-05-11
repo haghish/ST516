@@ -1,0 +1,25 @@
+---
+title: "ch. 8 ex. 6"
+---
+Tobias Mortensen
+
+```{r}
+# generate the first 100 data values:
+U <- runif(100) 
+X <- exp(U^2)
+sm <- mean(X) # sample mean
+sv <- sum((X-sm)^2)/99 # sample variance
+
+# generate values until S/sqrt(k) < d:
+k <- 0
+
+while(sqrt(sv)/sqrt(k) >= .01 ){
+  U <- runif(1)
+  X <- append(X, exp(U^2))
+  sm <- mean(X)
+  sv <- sum((X-sm)^2)/(99+k)
+  k <- k+1
+}
+
+sm # result
+```

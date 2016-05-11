@@ -1,0 +1,39 @@
+---
+title: "Plot Normal distribution exercise"
+author: "Birka Jensen"
+date: "27. apr. 2016"
+output: html_document
+---
+
+The point of this exercise is to learn how to plot functions in R and visualize data in R. 
+To accomplish this I will write a program that will draw the normal densityfuntion and cdf in one plot each. the first plot will be the normal density with mean = 0, and sd = i for i = 1,2,3...10. the second will be the normal cdf with mean 1 and sd = i. 
+
+The following is the function "distribution.change" that takes n as the number of simulated random variables to base the visualization on.
+
+```{r}
+distribution.change = function(n){
+
+i=seq(1,10)
+M = sapply(i, function(i) data = rnorm(n,0,i))
+M[,1]=sort(M[,1])
+plot(0,0, main = paste("PDF of ",n), type= 'l', xlim=c(-25,25), ylim = c(0,0.5))
+  for (i in 1:10){
+    M[,i]=sort(M[,i])
+    lines(M[,i],dnorm(M[,i],0,i),col = rgb((i/10),0,0))
+  }
+plot(0,0,xlim = c(-25,25),ylim= c(0,1.1),main = paste("CDF of ",n), type = 'l')
+  for(i in 1:10){
+  lines(ecdf(M[,i]), col = rgb((i/10),0,0))
+  }  
+}
+```
+
+This bit of code first makes a 2 by 2 grid for the plots and then calls distributionchange with n=100, n=1000 and n=10000 respectively. Results can be seen below.
+
+```{r}
+par(mfrow=c(3,2),mar=c(2,2,2,2))
+distribution.change(100)
+distribution.change(1000)
+distribution.change(10000)
+```
+

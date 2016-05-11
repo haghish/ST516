@@ -1,0 +1,28 @@
+---
+title: "Exercise 6"
+output: pdf_document
+---
+###Exercise 6, chapter 3    
+Use simulation to approximate the following integral. Compare your estimate with the exact answer if known.    
+$$\int_0^{\infty} x(1+x^2)^{-2}$$   
+I use chapter 3.2, I get that it can be calculated by:    
+$$\int_0^1 \frac{\left(\frac{1}{y}-1\right)\left(1+\left(\frac{1}{y}-1\right)^2\right)^{-2}}{y^2} dy$$    
+Then I approximate its solution in R.   
+
+
+```{r}
+n <- 50000
+RV <- c()
+for(i in 1:n){
+  U <- runif(1)
+  h <- (((1/U)-1)*(1+((1/U)-1)^2)^(-2))/(U^2)
+  q <- mean(h)
+  RV <- append(RV,q)
+}
+result <- sum(RV)/n
+
+```
+
+This give me the estimate $\approx 0.498$.   
+To find the exact answer then I calculated it in maple and got the following.    
+$$\int_0^1 \frac{\left(\frac{1}{y}-1\right)\left(1+\left(\frac{1}{y}-1\right)^2\right)^{-2}}{y^2} dy = \frac{1}{2}$$

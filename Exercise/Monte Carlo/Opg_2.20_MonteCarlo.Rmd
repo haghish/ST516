@@ -1,0 +1,86 @@
+---
+title: "Monte Carlo methods exercise 2.20"
+author: "Steffan Leth"
+date: "3. maj 2016"
+output: pdf_document
+---
+
+#Exercise 2.20 p. 59  
+In each of the following cases, construct an Accept{Reject algorithm,
+generate a sample of the corresponding random variables, and draw the density function on top of the histogram.  
+## a)  
+Generate normal random variables using a Cauchy candidate in Accept Reject.  
+```{r}
+n=10000
+k=1.6
+m=1
+x <- seq(m-5,m+5,.001)
+f <- 1.6/(pi*(1+(x-m)^2))
+f <- k*dcauchy(x,location = m)
+plot(x,dnorm(x,m,1),type="l",ylim=c(0,.5),xlab="x",ylab="Density")
+lines(x,f,lty=4)
+
+xc <- rep(0,n)
+yc <- rep(0,n)
+for(i in 1:n){
+  reject <- TRUE
+  while(reject){
+    p <- runif(1)
+    if (p < 0.5){
+      xc[i] <- qcauchy(p/k,location=m)+m
+      } 
+    else{
+     xc[i] <- -(qcauchy((1-p)/k,location=m))+m
+    }
+    p <- runif(1)
+    yc[i] <- p*k*dcauchy(xc[i],location = m)
+    if (yc[i] < dnorm(xc[i])){
+      reject <- FALSE
+    }
+  }
+}
+
+points(xc,yc)
+
+hist(xc,probability=T,xlim=c(m-4,m+4),ylim=c(0,1),xlab="x", breaks = 32)
+lines(x,dnorm(x,m,1))
+## SOMETHINGS WRONG; BUT I CANT FIND IT :-O 
+```
+
+## b)
+Generate gamma G(4.3; 6.2) random variables using a gamma G(4; 7) candidate.
+
+```{r}
+n=1000
+alpha = 4.3 #shape
+beta = 6.2 #rate
+k = 2.8 #constant
+x <- seq(0,10,length.out=n)
+f <- dgamma(x,shape=alpha, rate = beta)
+plot(x,k*dgamma(x,shape=4, rate=7),type="l",ylim=c(0,5),xlab="x",ylab="Density") # Plots the gamma(4,7)
+lines(x,f,lty=4) # Plots the target function
+
+xc <- rep(0,n)
+yc <- rep(0,n)
+for(i in 1:n){
+  reject <- TRUE
+  while(reject){
+    p <- runif(1)
+    if (p < 0.5){
+      xc[i]<- qgamma(p,shape = 4, rate=7)
+      } 
+    else{
+      xc[i] <- qgamma(p,shape = 4,rate = 7)
+    }
+    p <- runif(1)
+    yc[i] <- p*k*dgamma(xc[i], shape= 4,rate = 7)
+    if (yc[i] < dgamma(xc[i],shape=alpha,rate=beta)){ # Then the point under the gamma(alpha,beta)
+      reject <- FALSE
+    }
+  }
+}
+
+points(xc,yc,type='p') # The not rejected points
+hist(xc,probability=T,xlim=c(0,10),ylim=c(0,2),xlab="x",col=16, breaks = (n/16)) # Plots the histogram
+lines(x,dgamma(x,shape=alpha,rate=beta)) #Plot the target function, and see they look like each other. 
+```
