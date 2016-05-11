@@ -1,0 +1,24 @@
+---
+title: "Ross 8.7"
+author: "Björn Eyríkur Helgason"
+date: "9. maj 2016"
+output: html_document
+---
+To estimate $E[X]$, $X_1, ..., X_{16}$ have been simulated with the following values resulting: $10,11,10,10.5,11.5,14,8,13,6,15,10,11.5,10.5,12,8,16.5$. Based on these data, if we want standard deviation of the estimator of $E[X]$ to be less than $0.1$, roughly how many additional simulation runs will be needed?
+```{r}
+Xs <- c(10,11,10,10.5,11.5,14,8,13,6,15,10,11.5,10.5,12,8,16.5)
+var(Xs)
+sqrt(var(Xs))
+```
+
+Since we have that $Var(\bar{X}) = \frac{Var(X)}{n}$ and $n = 16$, we can estimate $Var(X)$ as
+```{r}
+VarX <- 16 * var(Xs)
+VarX
+```
+
+Solving $\frac{Var(X)}{n} = 0.1^2$ for $n$ yields $n = \frac{Var(X)}{0.01}$. As such we need
+```{r}
+VarX/0.01
+```
+simulations.
