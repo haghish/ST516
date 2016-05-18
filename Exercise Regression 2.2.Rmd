@@ -1,0 +1,96 @@
+---
+title: "Exercise Regression 2.2"
+author: "Emil H. Andersen"
+date: "May 18, 2016"
+output: pdf_document
+---
+
+The exercise uses information from the data set [indicator.txt](http://www.stat.tamu.edu/~sheather/book/docs/datasets/indicators.txt)
+
+#Task a)
+
+```{r}
+data <- read.table("indicators.txt",header=TRUE)
+data
+```
+
+First, we look at the scatterplot of the PriceChange and LoanPaymentsOverdue
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(data$LoanPaymentsOverdue,data$PriceChange, xlab="LoanPaymentsOverdue",ylab="PriceChange")
+```
+
+We can observe from the scatterplot that it very slightly resembles a negative relation, which is good news, since this is what we want to show!
+
+Now, we fit a linear model based on this data
+
+```{r}
+fit <- lm(data$PriceChange~data$LoanPaymentsOverdue)
+summary(fit)
+```
+
+We can observe from this summary, specifically from the intercept estimate and the "data$LoanPaymentsOverdue" estimates, that the least squares best of fit is defined as: $y = 4.5145 - 2.2485 \cdot x$
+
+```{r}
+x <- seq(0,7,0.1)
+y <- 4.5145 - 2.2485*x
+```
+
+Plotting this on top of the scatter plot results in:
+
+```{r, echo=FALSE}
+plot(data$LoanPaymentsOverdue,data$PriceChange, xlab="LoanPaymentsOverdue",ylab="PriceChange")
+lines(x,y,col="red")
+```
+
+Now, we calculate the residuals, to use to calculate the standard error of $\beta _1$:
+
+```{r}
+y2 <- 4.5145 - 2.2485*data$LoanPaymentsOverdue
+error <- data$PriceChange - y2
+S <- sqrt((1/(length(error)-2))*sum(error^2))
+SXX <- sum((data$LoanPaymentsOverdue - mean(data$LoanPaymentsOverdue))^2)
+seB <- S/sqrt(SXX)
+B1 <- -2.2485
+error
+seB
+```
+
+We can also test the hypothesis $H_0 : \beta_1 = 0$ against $H_A : \beta_1 \neq 0$:
+
+```{r}
+Tt <- (-2.2485-1)/seB
+Tt
+1-pt(Tt,18-2)
+```
+
+To get a confidence interval of $95 \%$, the slope of the regression line is given by: $(\hat{\beta_1} - t(\alpha /2,n-2)se(\hat{\beta_1}),\hat{\beta _1} + t(\alpha /2 , n-2)se(\hat{\beta_1}))$ 
+
+$= (-2.2485 - t(0.025,16)0.9033113,-2.2485 + t(0.025 , 16)0.9033113)$
+
+Where t is a t-distribution. We have that:
+```{r}
+c(-qt(0.975,16)*seB,qt(0.975,16)*seB)
+```
+
+So a 95% confidence interval for B1 would be $-2.2485 \pm 1.914934$. As such, we can see that there must be a negative linear relation Price Change and Loan Payments Overdue, even with the very large interval that it has.
+
+#Task b)
+
+We estimate $E(Y|X=4)$ using the fitted regression model from before:
+
+```{r}
+y3 <- 4.5145 - 2.2485*4
+y3
+```
+
+Then we find a $95\%$ confidence interval for $E(Y|X=4)$:
+```{r}
+c(-qt(0.975,length(error-2))*S*sqrt(1+1/length(error)+
+                                      (4-mean(data$LoanPaymentsOverdue))^2/SXX),
+  qt(0.975,length(error-2))*S*sqrt(1+1/length(error)+(4-mean(data$LoanPaymentsOverdue))^2/SXX))
+```
+So we have a confidence interval of $[-13.06022,4.10122]$. Note that $0$ is in fact in the interval, so $0\%$ is a reasonable result for $E(Y|X=4)$.
+
+
