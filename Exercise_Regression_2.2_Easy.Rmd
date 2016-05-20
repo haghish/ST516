@@ -12,11 +12,11 @@ The exercise uses information from the data set [indicator.txt](http://www.stat.
 ```{r}
 data <- read.table("indicators.txt",header=TRUE)
 a <- lm(data$PriceChange~data$LoanPaymentsOverdue)
-plot(data$LoanPaymentsOverdue,data$PriceChange,ylim=c(-15,5))
+plot(data$LoanPaymentsOverdue,data$PriceChange,ylim=c(-30,15))
 abline(a, col="red")
 x <- seq(0,10,0.1)
-ytop <- 4.5145 -0.3335853*x
-ybot <- 4.5145 -4.163454*x
+ytop <- 11.5611000 -0.3335853*x
+ybot <- -2.532112 -4.163454*x
 lines(x,ytop,lty=2)
 lines(x,ybot,lty=2)
 ```
@@ -36,11 +36,11 @@ Using information from summary and confint, we get
 
 ```{r}
 ymean <- 4.5145 -2.2485*4
-ybotCI <- 4.5145 - 4.163454*4
-ytopCI <- 4.5145 - 0.3335853*4
+ybotCI <- -2.532112 - 4.163454*4
+ytopCI <- 11.5611000 - 0.3335853*4
 c(ymean,ybotCI,ytopCI)
 ```
 
-We observe from this estimation, that $E(Y|X=x) = -4.479500$, and the $95 \%$ confidence interval is $[-12.139316,3.180159]$.
+We observe from this estimation, that $E(Y|X=x) = -4.47950$, and the $95 \%$ confidence interval is $[-19.18593,10.22676]$.
 
 We can conclude that $0$ is a reasonable answer for $E(Y|X=x)$ because of the large confidence interval, which happens to contain $0$.
