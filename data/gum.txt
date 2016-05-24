@@ -1,0 +1,21 @@
+"Players" "Number" "expected"
+"1" "Maradona" 30 0.14
+"2" "Pele" 30 0.06
+"3" "Platini" 10 0.06
+"4" "Ronaldinho" 12 0.02
+"5" "Ronaldo" 10 0.06
+"6" "Zidane" 30 0.1
+"7" "Messi" 10 0.03
+"8" "Beckham" 28 0.09
+"9" "Romario" 12 0.04
+"10" "Daei" 11 0.04
+"11" "Mateos" 10 0.03
+"12" "Carlos" 10 0.03
+"13" "Figo" 10 0.03
+"14" "Voller" 10 0.03
+"15" "Del Piero" 16 0.05
+"16" "Rooney" 16 0.05
+"17" "Batistuta" 10 0.03
+"18" "Zola" 10 0.03
+"19" "Bebeto" 10 0.03
+"20" "Ibrahimovic" 16 0.05
