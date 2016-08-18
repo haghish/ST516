@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<dta>
+<header>
+<ds_format>113</ds_format>
+<byteorder>LOHI</byteorder>
+<filetype>1</filetype>
+<nvar>12</nvar>
+<nobs>74</nobs>
+<data_label>1978 Automobile Data</data_label>
+<time_stamp>18 Aug 2016 17:30</time_stamp>
+</header>
+<descriptors>
+<typelist>
+<type varname='make'>str18</type>
+<type varname='price'>int</type>
+<type varname='mpg'>int</type>
+<type varname='rep78'>int</type>
+<type varname='headroom'>float</type>
+<type varname='trunk'>int</type>
+<type varname='weight'>int</type>
+<type varname='length'>int</type>
+<type varname='turn'>int</type>
+<type varname='displacement'>int</type>
+<type varname='gear_ratio'>float</type>
+<type varname='foreign'>byte</type>
+</typelist>
+<varlist>
+<variable varname='make'/>
+<variable varname='price'/>
+<variable varname='mpg'/>
+<variable varname='rep78'/>
+<variable varname='headroom'/>
+<variable varname='trunk'/>
+<variable varname='weight'/>
+<variable varname='length'/>
+<variable varname='turn'/>
+<variable varname='displacement'/>
+<variable varname='gear_ratio'/>
+<variable varname='foreign'/>
+</varlist>
+<srtlist>
+<sort varname='foreign'/>
+</srtlist>
+<fmtlist>
+<fmt varname='make'>%-18s</fmt>
+<fmt varname='price'>%8.0gc</fmt>
+<fmt varname='mpg'>%8.0g</fmt>
+<fmt varname='rep78'>%8.0g</fmt>
+<fmt varname='headroom'>%6.1f</fmt>
+<fmt varname='trunk'>%8.0g</fmt>
+<fmt varname='weight'>%8.0gc</fmt>
+<fmt varname='length'>%8.0g</fmt>
+<fmt varname='turn'>%8.0g</fmt>
+<fmt varname='displacement'>%8.0g</fmt>
+<fmt varname='gear_ratio'>%6.2f</fmt>
+<fmt varname='foreign'>%8.0g</fmt>
+</fmtlist>
+<lbllist>
+<lblname varname='make'></lblname>
+<lblname varname='price'></lblname>
+<lblname varname='mpg'></lblname>
+<lblname varname='rep78'></lblname>
+<lblname varname='headroom'></lblname>
+<lblname varname='trunk'></lblname>
+<lblname varname='weight'></lblname>
+<lblname varname='length'></lblname>
+<lblname varname='turn'></lblname>
+<lblname varname='displacement'></lblname>
+<lblname varname='gear_ratio'></lblname>
+<lblname varname='foreign'>origin</lblname>
+</lbllist>
+</descriptors>
+<variable_labels>
+<vlabel varname='make'>Make and Model</vlabel>
+<vlabel varname='price'>Price</vlabel>
+<vlabel varname='mpg'>Mileage (mpg)</vlabel>
+<vlabel varname='rep78'>Repair Record 1978</vlabel>
+<vlabel varname='headroom'>Headroom (in.)</vlabel>
+<vlabel varname='trunk'>Trunk space (cu. ft.)</vlabel>
+<vlabel varname='weight'>Weight (lbs.)</vlabel>
+<vlabel varname='length'>Length (in.)</vlabel>
+<vlabel varname='turn'>Turn Circle (ft.) </vlabel>
+<vlabel varname='displacement'>Displacement (cu. in.)</vlabel>
+<vlabel varname='gear_ratio'>Gear Ratio</vlabel>
+<vlabel varname='foreign'>Car type</vlabel>
+</variable_labels>
+<expansion>
+<char name='note0' vname='_dta'>1</char>
+<char name='note1' vname='_dta'>from Consumer Reports with permission</char>
+</expansion>
+<data>
+<o>
+<v>AMC Concord</v>
+<v>4099</v>
+<v>22</v>
+<v>3</v>
+<v>2.500000000000000</v>
+<v>11</v>
+<v>2930</v>
+<v>186</v>
+<v>40</v>
+<v>121</v>
+<v>3.579999923706055</v>
+<v>0</v>
+</o>
+<o>
+<v>AMC Pacer</v>
+<v>4749</v>
+<v>17</v>
+<v>3</v>
+<v>3.000000000000000</v>
+<v>11</v>
+<v>3350</v>
+<v>173</v>
+<v>40</v>
+<v>258</v>
+<v>2.529999971389771</v>
+<v>0</v>
+</o>
+<o>
+<v>AMC Spirit</v>
+<v>3799</v>
+<v>22</v>
+<v>.</v>
+<v>3.000000000000000</v>
+<v>12</v>
+<v>2640</v>
+<v>168</v>
+<v>35</v>
+<v>121</v>
+<v>3.079999923706055</v>
+<v>0</v>
+</o>
+<o>
+<v>Buick Century</v>
+<v>4816</v>
+<v>20</v>
+<v>3</v>
+<v>4.500000000000000</v>
+<v>16</v>
+<v>3250</v>
+<v>196</v>
+<v>40</v>
+<v>196</v>
+<v>2.930000066757202</v>
+<v>0</v>
+</o>
+<o>
+<v>Buick Electra</v>
+<v>7827</v>
+<v>15</v>
+<v>4</v>
+<v>4.000000000000000</v>
+<v>20</v>
+<v>4080</v>
+<v>222</v>
+<v>43</v>
+<v>350</v>
+<v>2.410000085830688</v>
+<v>0</v>
+</o>
+<o>
+<v>Buick LeSabre</v>
+<v>5788</v>
+<v>18</v>
+<v>3</v>
+<v>4.000000000000000</v>
+<v>21</v>
+<v>3670</v>
+<v>218</v>
+<v>43</v>
+<v>231</v>
+<v>2.730000019073486</v>
+<v>0</v>
+</o>
+<o>
+<v>Buick Opel</v>
+<v>4453</v>
+<v>26</v>
+<v>.</v>
+<v>3.000000000000000</v>
+<v>10</v>
+<v>2230</v>
+<v>170</v>
+<v>34</v>
+<v>304</v>
+<v>2.869999885559082</v>
+<v>0</v>
+</o>
+<o>
+<v>Buick Regal</v>
+<v>5189</v>
+<v>20</v>
+<v>3</v>
+<v>2.000000000000000</v>
+<v>16</v>
+<v>3280</v>
+<v>200</v>
+<v>42</v>
+<v>196</v>
+<v>2.930000066757202</v>
+<v>0</v>
+</o>
+<o>
+<v>Buick Riviera</v>
+<v>10372</v>
+<v>16</v>
+<v>3</v>
+<v>3.500000000000000</v>
+<v>17</v>
+<v>3880</v>
+<v>207</v>
+<v>43</v>
+<v>231</v>
+<v>2.930000066757202</v>
+<v>0</v>
+</o>
+<o>
+<v>Buick Skylark</v>
+<v>4082</v>
+<v>19</v>
+<v>3</v>
+<v>3.500000000000000</v>
+<v>13</v>
+<v>3400</v>
+<v>200</v>
+<v>42</v>
+<v>231</v>
+<v>3.079999923706055</v>
+<v>0</v>
+</o>
+<o>
+<v>Cad. Deville</v>
+<v>11385</v>
+<v>14</v>
+<v>3</v>
+<v>4.000000000000000</v>
+<v>20</v>
+<v>4330</v>
+<v>221</v>
+<v>44</v>
+<v>425</v>
+<v>2.279999971389771</v>
+<v>0</v>
+</o>
+<o>
+<v>Cad. Eldorado</v>
+<v>14500</v>
+<v>14</v>
+<v>2</v>
+<v>3.500000000000000</v>
+<v>16</v>
+<v>3900</v>
+<v>204</v>
+<v>43</v>
+<v>350</v>
+<v>2.190000057220459</v>
+<v>0</v>
+</o>
+<o>
+<v>Cad. Seville</v>
+<v>15906</v>
+<v>21</v>
+<v>3</v>
+<v>3.000000000000000</v>
+<v>13</v>
+<v>4290</v>
+<v>204</v>
+<v>45</v>
+<v>350</v>
+<v>2.240000009536743</v>
+<v>0</v>
+</o>
+<o>
+<v>Chev. Chevette</v>
+<v>3299</v>
+<v>29</v>
+<v>3</v>
+<v>2.500000000000000</v>
+<v>9</v>
+<v>2110</v>
+<v>163</v>
+<v>34</v>
+<v>231</v>
+<v>2.930000066757202</v>
+<v>0</v>
+</o>
+<o>
+<v>Chev. Impala</v>
+<v>5705</v>
+<v>16</v>
+<v>4</v>
+<v>4.000000000000000</v>
+<v>20</v>
+<v>3690</v>
+<v>212</v>
+<v>43</v>
+<v>250</v>
+<v>2.559999942779541</v>
+<v>0</v>
+</o>
+<o>
+<v>Chev. Malibu</v>
+<v>4504</v>
+<v>22</v>
+<v>3</v>
+<v>3.500000000000000</v>
+<v>17</v>
+<v>3180</v>
+<v>193</v>
+<v>31</v>
+<v>200</v>
+<v>2.730000019073486</v>
+<v>0</v>
+</o>
+<o>
+<v>Chev. Monte Carlo</v>
+<v>5104</v>
+<v>22</v>
+<v>2</v>
+<v>2.000000000000000</v>
+<v>16</v>
+<v>3220</v>
+<v>200</v>
+<v>41</v>
+<v>200</v>
+<v>2.730000019073486</v>
+<v>0</v>
+</o>
+<o>
+<v>Chev. Monza</v>
+<v>3667</v>
+<v>24</v>
+<v>2</v>
+<v>2.000000000000000</v>
+<v>7</v>
+<v>2750</v>
+<v>179</v>
+<v>40</v>
+<v>151</v>
+<v>2.730000019073486</v>
+<v>0</v>
+</o>
+<o>
+<v>Chev. Nova</v>
+<v>3955</v>
+<v>19</v>
+<v>3</v>
+<v>3.500000000000000</v>
+<v>13</v>
+<v>3430</v>
+<v>197</v>
+<v>43</v>
+<v>250</v>
+<v>2.559999942779541</v>
+<v>0</v>
+</o>
+<o>
+<v>Dodge Colt</v>
+<v>3984</v>
+<v>30</v>
+<v>5</v>
+<v>2.000000000000000</v>
+<v>8</v>
+<v>2120</v>
+<v>163</v>
+<v>35</v>
+<v>98</v>
+<v>3.539999961853027</v>
+<v>0</v>
+</o>
+<o>
+<v>Dodge Diplomat</v>
+<v>4010</v>
+<v>18</v>
+<v>2</v>
+<v>4.000000000000000</v>
+<v>17</v>
+<v>3600</v>
+<v>206</v>
+<v>46</v>
+<v>318</v>
+<v>2.470000028610229</v>
+<v>0</v>
+</o>
+<o>
+<v>Dodge Magnum</v>
+<v>5886</v>
+<v>16</v>
+<v>2</v>
+<v>4.000000000000000</v>
+<v>17</v>
+<v>3600</v>
+<v>206</v>
+<v>46</v>
+<v>318</v>
+<v>2.470000028610229</v>
+<v>0</v>
+</o>
+<o>
+<v>Dodge St. Regis</v>
+<v>6342</v>
+<v>17</v>
+<v>2</v>
+<v>4.500000000000000</v>
+<v>21</v>
+<v>3740</v>
+<v>220</v>
+<v>46</v>
+<v>225</v>
+<v>2.940000057220459</v>
+<v>0</v>
+</o>
+<o>
+<v>Ford Fiesta</v>
+<v>4389</v>
+<v>28</v>
+<v>4</v>
+<v>1.500000000000000</v>
+<v>9</v>
+<v>1800</v>
+<v>147</v>
+<v>33</v>
+<v>98</v>
+<v>3.150000095367432</v>
+<v>0</v>
+</o>
+<o>
+<v>Ford Mustang</v>
+<v>4187</v>
+<v>21</v>
+<v>3</v>
+<v>2.000000000000000</v>
+<v>10</v>
+<v>2650</v>
+<v>179</v>
+<v>43</v>
+<v>140</v>
+<v>3.079999923706055</v>
+<v>0</v>
+</o>
+<o>
+<v>Linc. Continental</v>
+<v>11497</v>
+<v>12</v>
+<v>3</v>
+<v>3.500000000000000</v>
+<v>22</v>
+<v>4840</v>
+<v>233</v>
+<v>51</v>
+<v>400</v>
+<v>2.470000028610229</v>
+<v>0</v>
+</o>
+<o>
+<v>Linc. Mark V</v>
+<v>13594</v>
+<v>12</v>
+<v>3</v>
+<v>2.500000000000000</v>
+<v>18</v>
+<v>4720</v>
+<v>230</v>
+<v>48</v>
+<v>400</v>
+<v>2.470000028610229</v>
+<v>0</v>
+</o>
+<o>
+<v>Linc. Versailles</v>
+<v>13466</v>
+<v>14</v>
+<v>3</v>
+<v>3.500000000000000</v>
+<v>15</v>
+<v>3830</v>
+<v>201</v>
+<v>41</v>
+<v>302</v>
+<v>2.470000028610229</v>
+<v>0</v>
+</o>
+<o>
+<v>Merc. Bobcat</v>
+<v>3829</v>
+<v>22</v>
+<v>4</v>
+<v>3.000000000000000</v>
+<v>9</v>
+<v>2580</v>
+<v>169</v>
+<v>39</v>
+<v>140</v>
+<v>2.730000019073486</v>
+<v>0</v>
+</o>
+<o>
+<v>Merc. Cougar</v>
+<v>5379</v>
+<v>14</v>
+<v>4</v>
+<v>3.500000000000000</v>
+<v>16</v>
+<v>4060</v>
+<v>221</v>
+<v>48</v>
+<v>302</v>
+<v>2.750000000000000</v>
+<v>0</v>
+</o>
+<o>
+<v>Merc. Marquis</v>
+<v>6165</v>
+<v>15</v>
+<v>3</v>
+<v>3.500000000000000</v>
+<v>23</v>
+<v>3720</v>
+<v>212</v>
+<v>44</v>
+<v>302</v>
+<v>2.259999990463257</v>
+<v>0</v>
+</o>
+<o>
+<v>Merc. Monarch</v>
+<v>4516</v>
+<v>18</v>
+<v>3</v>
+<v>3.000000000000000</v>
+<v>15</v>
+<v>3370</v>
+<v>198</v>
+<v>41</v>
+<v>250</v>
+<v>2.430000066757202</v>
+<v>0</v>
+</o>
+<o>
+<v>Merc. XR-7</v>
+<v>6303</v>
+<v>14</v>
+<v>4</v>
+<v>3.000000000000000</v>
+<v>16</v>
+<v>4130</v>
+<v>217</v>
+<v>45</v>
+<v>302</v>
+<v>2.750000000000000</v>
+<v>0</v>
+</o>
+<o>
+<v>Merc. Zephyr</v>
+<v>3291</v>
+<v>20</v>
+<v>3</v>
+<v>3.500000000000000</v>
+<v>17</v>
+<v>2830</v>
+<v>195</v>
+<v>43</v>
+<v>140</v>
+<v>3.079999923706055</v>
+<v>0</v>
+</o>
+<o>
+<v>Olds 98</v>
+<v>8814</v>
+<v>21</v>
+<v>4</v>
+<v>4.000000000000000</v>
+<v>20</v>
+<v>4060</v>
+<v>220</v>
+<v>43</v>
+<v>350</v>
+<v>2.410000085830688</v>
+<v>0</v>
+</o>
+<o>
+<v>Olds Cutl Supr</v>
+<v>5172</v>
+<v>19</v>
+<v>3</v>
+<v>2.000000000000000</v>
+<v>16</v>
+<v>3310</v>
+<v>198</v>
+<v>42</v>
+<v>231</v>
+<v>2.930000066757202</v>
+<v>0</v>
+</o>
+<o>
+<v>Olds Cutlass</v>
+<v>4733</v>
+<v>19</v>
+<v>3</v>
+<v>4.500000000000000</v>
+<v>16</v>
+<v>3300</v>
+<v>198</v>
+<v>42</v>
+<v>231</v>
+<v>2.930000066757202</v>
+<v>0</v>
+</o>
+<o>
+<v>Olds Delta 88</v>
+<v>4890</v>
+<v>18</v>
+<v>4</v>
+<v>4.000000000000000</v>
+<v>20</v>
+<v>3690</v>
+<v>218</v>
+<v>42</v>
+<v>231</v>
+<v>2.730000019073486</v>
+<v>0</v>
+</o>
+<o>
+<v>Olds Omega</v>
+<v>4181</v>
+<v>19</v>
+<v>3</v>
+<v>4.500000000000000</v>
+<v>14</v>
+<v>3370</v>
+<v>200</v>
+<v>43</v>
+<v>231</v>
+<v>3.079999923706055</v>
+<v>0</v>
+</o>
+<o>
+<v>Olds Starfire</v>
+<v>4195</v>
+<v>24</v>
+<v>1</v>
+<v>2.000000000000000</v>
+<v>10</v>
+<v>2730</v>
+<v>180</v>
+<v>40</v>
+<v>151</v>
+<v>2.730000019073486</v>
+<v>0</v>
+</o>
+<o>
+<v>Olds Toronado</v>
+<v>10371</v>
+<v>16</v>
+<v>3</v>
+<v>3.500000000000000</v>
+<v>17</v>
+<v>4030</v>
+<v>206</v>
+<v>43</v>
+<v>350</v>
+<v>2.410000085830688</v>
+<v>0</v>
+</o>
+<o>
+<v>Plym. Arrow</v>
+<v>4647</v>
+<v>28</v>
+<v>3</v>
+<v>2.000000000000000</v>
+<v>11</v>
+<v>3260</v>
+<v>170</v>
+<v>37</v>
+<v>156</v>
+<v>3.049999952316284</v>
+<v>0</v>
+</o>
+<o>
+<v>Plym. Champ</v>
+<v>4425</v>
+<v>34</v>
+<v>5</v>
+<v>2.500000000000000</v>
+<v>11</v>
+<v>1800</v>
+<v>157</v>
+<v>37</v>
+<v>86</v>
+<v>2.970000028610229</v>
+<v>0</v>
+</o>
+<o>
+<v>Plym. Horizon</v>
+<v>4482</v>
+<v>25</v>
+<v>3</v>
+<v>4.000000000000000</v>
+<v>17</v>
+<v>2200</v>
+<v>165</v>
+<v>36</v>
+<v>105</v>
+<v>3.369999885559082</v>
+<v>0</v>
+</o>
+<o>
+<v>Plym. Sapporo</v>
+<v>6486</v>
+<v>26</v>
+<v>.</v>
+<v>1.500000000000000</v>
+<v>8</v>
+<v>2520</v>
+<v>182</v>
+<v>38</v>
+<v>119</v>
+<v>3.539999961853027</v>
+<v>0</v>
+</o>
+<o>
+<v>Plym. Volare</v>
+<v>4060</v>
+<v>18</v>
+<v>2</v>
+<v>5.000000000000000</v>
+<v>16</v>
+<v>3330</v>
+<v>201</v>
+<v>44</v>
+<v>225</v>
+<v>3.230000019073486</v>
+<v>0</v>
+</o>
+<o>
+<v>Pont. Catalina</v>
+<v>5798</v>
+<v>18</v>
+<v>4</v>
+<v>4.000000000000000</v>
+<v>20</v>
+<v>3700</v>
+<v>214</v>
+<v>42</v>
+<v>231</v>
+<v>2.730000019073486</v>
+<v>0</v>
+</o>
+<o>
+<v>Pont. Firebird</v>
+<v>4934</v>
+<v>18</v>
+<v>1</v>
+<v>1.500000000000000</v>
+<v>7</v>
+<v>3470</v>
+<v>198</v>
+<v>42</v>
+<v>231</v>
+<v>3.079999923706055</v>
+<v>0</v>
+</o>
+<o>
+<v>Pont. Grand Prix</v>
+<v>5222</v>
+<v>19</v>
+<v>3</v>
+<v>2.000000000000000</v>
+<v>16</v>
+<v>3210</v>
+<v>201</v>
+<v>45</v>
+<v>231</v>
+<v>2.930000066757202</v>
+<v>0</v>
+</o>
+<o>
+<v>Pont. Le Mans</v>
+<v>4723</v>
+<v>19</v>
+<v>3</v>
+<v>3.500000000000000</v>
+<v>17</v>
+<v>3200</v>
+<v>199</v>
+<v>40</v>
+<v>231</v>
+<v>2.930000066757202</v>
+<v>0</v>
+</o>
+<o>
+<v>Pont. Phoenix</v>
+<v>4424</v>
+<v>19</v>
+<v>.</v>
+<v>3.500000000000000</v>
+<v>13</v>
+<v>3420</v>
+<v>203</v>
+<v>43</v>
+<v>231</v>
+<v>3.079999923706055</v>
+<v>0</v>
+</o>
+<o>
+<v>Pont. Sunbird</v>
+<v>4172</v>
+<v>24</v>
+<v>2</v>
+<v>2.000000000000000</v>
+<v>7</v>
+<v>2690</v>
+<v>179</v>
+<v>41</v>
+<v>151</v>
+<v>2.730000019073486</v>
+<v>0</v>
+</o>
+<o>
+<v>Audi 5000</v>
+<v>9690</v>
+<v>17</v>
+<v>5</v>
+<v>3.000000000000000</v>
+<v>15</v>
+<v>2830</v>
+<v>189</v>
+<v>37</v>
+<v>131</v>
+<v>3.200000047683716</v>
+<v>1</v>
+</o>
+<o>
+<v>Audi Fox</v>
+<v>6295</v>
+<v>23</v>
+<v>3</v>
+<v>2.500000000000000</v>
+<v>11</v>
+<v>2070</v>
+<v>174</v>
+<v>36</v>
+<v>97</v>
+<v>3.700000047683716</v>
+<v>1</v>
+</o>
+<o>
+<v>BMW 320i</v>
+<v>9735</v>
+<v>25</v>
+<v>4</v>
+<v>2.500000000000000</v>
+<v>12</v>
+<v>2650</v>
+<v>177</v>
+<v>34</v>
+<v>121</v>
+<v>3.640000104904175</v>
+<v>1</v>
+</o>
+<o>
+<v>Datsun 200</v>
+<v>6229</v>
+<v>23</v>
+<v>4</v>
+<v>1.500000000000000</v>
+<v>6</v>
+<v>2370</v>
+<v>170</v>
+<v>35</v>
+<v>119</v>
+<v>3.890000104904175</v>
+<v>1</v>
+</o>
+<o>
+<v>Datsun 210</v>
+<v>4589</v>
+<v>35</v>
+<v>5</v>
+<v>2.000000000000000</v>
+<v>8</v>
+<v>2020</v>
+<v>165</v>
+<v>32</v>
+<v>85</v>
+<v>3.700000047683716</v>
+<v>1</v>
+</o>
+<o>
+<v>Datsun 510</v>
+<v>5079</v>
+<v>24</v>
+<v>4</v>
+<v>2.500000000000000</v>
+<v>8</v>
+<v>2280</v>
+<v>170</v>
+<v>34</v>
+<v>119</v>
+<v>3.539999961853027</v>
+<v>1</v>
+</o>
+<o>
+<v>Datsun 810</v>
+<v>8129</v>
+<v>21</v>
+<v>4</v>
+<v>2.500000000000000</v>
+<v>8</v>
+<v>2750</v>
+<v>184</v>
+<v>38</v>
+<v>146</v>
+<v>3.549999952316284</v>
+<v>1</v>
+</o>
+<o>
+<v>Fiat Strada</v>
+<v>4296</v>
+<v>21</v>
+<v>3</v>
+<v>2.500000000000000</v>
+<v>16</v>
+<v>2130</v>
+<v>161</v>
+<v>36</v>
+<v>105</v>
+<v>3.369999885559082</v>
+<v>1</v>
+</o>
+<o>
+<v>Honda Accord</v>
+<v>5799</v>
+<v>25</v>
+<v>5</v>
+<v>3.000000000000000</v>
+<v>10</v>
+<v>2240</v>
+<v>172</v>
+<v>36</v>
+<v>107</v>
+<v>3.049999952316284</v>
+<v>1</v>
+</o>
+<o>
+<v>Honda Civic</v>
+<v>4499</v>
+<v>28</v>
+<v>4</v>
+<v>2.500000000000000</v>
+<v>5</v>
+<v>1760</v>
+<v>149</v>
+<v>34</v>
+<v>91</v>
+<v>3.299999952316284</v>
+<v>1</v>
+</o>
+<o>
+<v>Mazda GLC</v>
+<v>3995</v>
+<v>30</v>
+<v>4</v>
+<v>3.500000000000000</v>
+<v>11</v>
+<v>1980</v>
+<v>154</v>
+<v>33</v>
+<v>86</v>
+<v>3.730000019073486</v>
+<v>1</v>
+</o>
+<o>
+<v>Peugeot 604</v>
+<v>12990</v>
+<v>14</v>
+<v>.</v>
+<v>3.500000000000000</v>
+<v>14</v>
+<v>3420</v>
+<v>192</v>
+<v>38</v>
+<v>163</v>
+<v>3.579999923706055</v>
+<v>1</v>
+</o>
+<o>
+<v>Renault Le Car</v>
+<v>3895</v>
+<v>26</v>
+<v>3</v>
+<v>3.000000000000000</v>
+<v>10</v>
+<v>1830</v>
+<v>142</v>
+<v>34</v>
+<v>79</v>
+<v>3.720000028610229</v>
+<v>1</v>
+</o>
+<o>
+<v>Subaru</v>
+<v>3798</v>
+<v>35</v>
+<v>5</v>
+<v>2.500000000000000</v>
+<v>11</v>
+<v>2050</v>
+<v>164</v>
+<v>36</v>
+<v>97</v>
+<v>3.809999942779541</v>
+<v>1</v>
+</o>
+<o>
+<v>Toyota Celica</v>
+<v>5899</v>
+<v>18</v>
+<v>5</v>
+<v>2.500000000000000</v>
+<v>14</v>
+<v>2410</v>
+<v>174</v>
+<v>36</v>
+<v>134</v>
+<v>3.059999942779541</v>
+<v>1</v>
+</o>
+<o>
+<v>Toyota Corolla</v>
+<v>3748</v>
+<v>31</v>
+<v>5</v>
+<v>3.000000000000000</v>
+<v>9</v>
+<v>2200</v>
+<v>165</v>
+<v>35</v>
+<v>97</v>
+<v>3.210000038146973</v>
+<v>1</v>
+</o>
+<o>
+<v>Toyota Corona</v>
+<v>5719</v>
+<v>18</v>
+<v>5</v>
+<v>2.000000000000000</v>
+<v>11</v>
+<v>2670</v>
+<v>175</v>
+<v>36</v>
+<v>134</v>
+<v>3.049999952316284</v>
+<v>1</v>
+</o>
+<o>
+<v>VW Dasher</v>
+<v>7140</v>
+<v>23</v>
+<v>4</v>
+<v>2.500000000000000</v>
+<v>12</v>
+<v>2160</v>
+<v>172</v>
+<v>36</v>
+<v>97</v>
+<v>3.740000009536743</v>
+<v>1</v>
+</o>
+<o>
+<v>VW Diesel</v>
+<v>5397</v>
+<v>41</v>
+<v>5</v>
+<v>3.000000000000000</v>
+<v>15</v>
+<v>2040</v>
+<v>155</v>
+<v>35</v>
+<v>90</v>
+<v>3.779999971389771</v>
+<v>1</v>
+</o>
+<o>
+<v>VW Rabbit</v>
+<v>4697</v>
+<v>25</v>
+<v>4</v>
+<v>3.000000000000000</v>
+<v>15</v>
+<v>1930</v>
+<v>155</v>
+<v>35</v>
+<v>89</v>
+<v>3.779999971389771</v>
+<v>1</v>
+</o>
+<o>
+<v>VW Scirocco</v>
+<v>6850</v>
+<v>25</v>
+<v>4</v>
+<v>2.000000000000000</v>
+<v>16</v>
+<v>1990</v>
+<v>156</v>
+<v>36</v>
+<v>97</v>
+<v>3.779999971389771</v>
+<v>1</v>
+</o>
+<o>
+<v>Volvo 260</v>
+<v>11995</v>
+<v>17</v>
+<v>5</v>
+<v>2.500000000000000</v>
+<v>14</v>
+<v>3170</v>
+<v>193</v>
+<v>37</v>
+<v>163</v>
+<v>2.980000019073486</v>
+<v>1</v>
+</o>
+</data>
+<value_labels>
+<vallab name='origin'>
+<label value='0'>Domestic</label>
+<label value='1'>Foreign</label>
+</vallab>
+</value_labels>
+</dta>
